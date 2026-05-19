@@ -18,12 +18,11 @@ function distribucionaleatoria(lista) {
     lista_duplicada = lista.concat(lista);
  
     for (let i = 0; i < casillas.length; i++) {
-        console.log("holi"+lista_duplicada);
-        let elementoRandom = lista_palabras[Math.floor(Math.random() * lista_palabras.length)]
+        let elementoRandom = lista_duplicada[Math.floor(Math.random() * lista_duplicada.length)]
         let casilla = document.getElementById(casillas[i]);
         casilla.textContent = elementoRandom;
-        console.log(elementoRandom);
-        let lista_duplicada = lista_duplicada.splice(lista_duplicada.indexOf(elementoRandom), 1);
+        lista_duplicada.splice(lista_duplicada.indexOf(elementoRandom), 1);
+
         console.log(lista_duplicada);
 }
 
