@@ -12,3 +12,12 @@ for (let i = 0; i < casillas.length; i++) {
         casilla.textContent = "o";
     });
 }
+lista palabras= ["perro","gato","casa","arbol"]
+
+function distribucionaleatoria(lista,) {
+    for (let i = 0; i < casillas.length; i++) {
+        console.log(i);
+}
+
+}
+distribucionaleatoria();
