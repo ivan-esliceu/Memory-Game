@@ -99,30 +99,68 @@ function verificarpareja(){
 
 
 function Main() {
-    ultimosdosclicks = []
+    ultimosdosclicks = [];
     distribucion = distribucionaleatoriaacoordenadas(lista_palabras);
     console.log(distribucion);
     parejas = parejasposibles(distribucion);
     mostrarquehaydebajocasillla(ultimosdosclicks, distribucion);
+    
+    let parejasDescubiertas = [];
+
     for (let i = 0; i < casillas.length; i++) {
         let casilla = document.getElementById(casillas[i]);     
+        
         casilla.addEventListener("click", function() {
             
-            ultimosdosclicks.push(i+1);
-            
-            if(ultimosdosclicks.length > 2){
-                ultimosdosclicks.shift();
-    }      
-            console.log()
-            for (let u= 0; u<4;u++){
-
-                if((parejas[u][0] == ultimosdosclicks[0] && parejas[u][1] == ultimosdosclicks[1]) || (parejas[u][0] == ultimosdosclicks[1] && parejas[u][1] == ultimosdosclicks[0])) {
-                    console.log("hihi funciona");
+            if (parejasDescubiertas.includes(i + 1)) {
+                return;
             }
-        }
-        }  
-    )
-    
+
+            if (ultimosdosclicks.length === 1 && ultimosdosclicks[0] === (i + 1)) {
+                return;
+            }
+
+            ultimosdosclicks.push(i + 1);
+            
+            if (ultimosdosclicks.length > 2) {
+                ultimosdosclicks.shift();
+            }      
+            
+            if (ultimosdosclicks.length < 2) {
+                return;
+            }
+
+            let acierto = false;
+
+            for (let u = 0; u < parejas.length; u++) {
+                if ((parejas[u][0] == ultimosdosclicks[0] && parejas[u][1] == ultimosdosclicks[1]) || 
+                    (parejas[u][0] == ultimosdosclicks[1] && parejas[u][1] == ultimosdosclicks[0])) {
+                    
+                    console.log("hihi funciona");
+                    acierto = true;
+                    
+                    parejasDescubiertas.push(ultimosdosclicks[0]);
+                    parejasDescubiertas.push(ultimosdosclicks[1]);
+                    
+                    break;
+                }
+            }
+
+            if (acierto === false) {
+                for (let j = 0; j < casillas.length; j++) {
+                    if (!parejasDescubiertas.includes(j + 1)) {
+                        let casillaA = document.getElementById(casillas[j]);
+                        casillaA.textContent = "a";   
+                    }
+                }
+            }
+
+            ultimosdosclicks = [];
+        });
     }    
-    }     
+}     
+
+
+
+
 Main();
