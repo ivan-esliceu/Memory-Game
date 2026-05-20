@@ -29,7 +29,7 @@ function distribucionaleatoriaacoordenadas(lista) {
 }
 
 function sacarcoordendadasultimosdosclicks(){
-    ultimosdosclicks = [];
+    ultimosdosclicks = ["hola"];
     for (let i = 0; i < casillas.length; i++) {
         let casilla = document.getElementById(casillas[i]);
         casilla.addEventListener("click", function() {
@@ -38,8 +38,10 @@ function sacarcoordendadasultimosdosclicks(){
                 if (ultimosdosclicks.length > 2) {
                     ultimosdosclicks.shift();
                 }
-            
+          
+                
         })
+    return ultimosdosclicks;            
 
 
 }
@@ -58,22 +60,13 @@ function parejasposibles(lista){
     return lista_parejas;
 }
 
-console.log(parejasposibles(distribucionaleatoriaacoordenadas(lista_palabras)));
 
 function revertirpareja(pareja){
     return [pareja[1], pareja[0]];
 }
 
-function todasparejas(lista){
-    lista_total_parejas = [];
-    for (let i = 0; i < lista.length; i++) {
-        lista_total_parejas.push([revertirpareja(lista[i]), lista[i]]);
-    }
-    return lista_total_parejas;
-}   
 
-parejas = parejasposibles(distribucionaleatoriaacoordenadas(lista_palabras));
-console.log(todasparejas(parejas));
+
 
 
 
@@ -83,27 +76,53 @@ function mostrarquehaydebajocasillla(ultimosdosclicks, lista) {
         casilla.addEventListener("click", function() {
           casilla.textContent = lista[i];
      });
+     
      }  
 }
-mostrarquehaydebajocasillla(ultimosdosclicks, distribucionaleatoriaacoordenadas(lista_palabras));
+
+
+
 
 function verificarpareja(){
 
-    for(let i = 0; i<8;i++){
-        console.log(i);
-    }
-    
-    console.log(parejas);
-}
+    for(let i = 0; i<4;i++){
+        
+        if(sacarcoordendadasultimosdosclicks() == parejas[i] || sacarcoordendadasultimosdosclicks() == [parejas[i][1],parejas[i][0]]){
+            return true;
+        } else {
+            return false;
+ 
+        }
+    }}
+  
+
 
 
 function Main() {
+    ultimosdosclicks = []
+    distribucion = distribucionaleatoriaacoordenadas(lista_palabras);
+    console.log(distribucion);
+    parejas = parejasposibles(distribucion);
+    mostrarquehaydebajocasillla(ultimosdosclicks, distribucion);
     for (let i = 0; i < casillas.length; i++) {
         let casilla = document.getElementById(casillas[i]);     
         casilla.addEventListener("click", function() {
             
-        });
-    }      
-}
-
-verificarpareja()
+            ultimosdosclicks.push(i+1);
+            console.log(ultimosdosclicks);
+            if(ultimosdosclicks.length > 2){
+                ultimosdosclicks.shift();
+    }       console.log(parejas);
+            
+            for (let u= 0; u<4;u++){
+                console.log(parejas[u]);
+                if(ultimosdosclicks[0],ultimosdosclicks[1] == parejas[u] || ultimosdosclicks[0],ultimosdosclicks[1] == [parejas[u][1],parejas[u][0]]){
+                    console.log("hihi funciona");
+            }
+        }
+        }  
+    )
+    
+    }    
+    }     
+Main();
