@@ -109,14 +109,14 @@ function Main() {
         casilla.addEventListener("click", function() {
             
             ultimosdosclicks.push(i+1);
-            console.log(ultimosdosclicks);
+            
             if(ultimosdosclicks.length > 2){
                 ultimosdosclicks.shift();
-    }       console.log(parejas);
-            
+    }      
+            console.log()
             for (let u= 0; u<4;u++){
-                console.log(parejas[u]);
-                if(ultimosdosclicks[0],ultimosdosclicks[1] == parejas[u] || ultimosdosclicks[0],ultimosdosclicks[1] == [parejas[u][1],parejas[u][0]]){
+
+                if((parejas[u][0] == ultimosdosclicks[0] && parejas[u][1] == ultimosdosclicks[1]) || (parejas[u][0] == ultimosdosclicks[1] && parejas[u][1] == ultimosdosclicks[0])) {
                     console.log("hihi funciona");
             }
         }
