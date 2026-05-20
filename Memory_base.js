@@ -76,13 +76,6 @@ parejas = parejasposibles(distribucionaleatoriaacoordenadas(lista_palabras));
 console.log(todasparejas(parejas));
 
 
-function verificarpareja(ultimosdosclicks, todasparejas) {
-    for (let i = 0; i < todasparejas.length; i++) {
-        if ((ultimosdosclicks[0] === todasparejas[i][0][0] && ultimosdosclicks[1] === todasparejas[i][0][1]) || (ultimosdosclicks[0] === todasparejas[i][1][0] && ultimosdosclicks[1] === todasparejas[i][1][1])) {
-            return true;
-        }
-    }    return false;
-}
 
 function mostrarquehaydebajocasillla(ultimosdosclicks, lista) {
     for (let i = 0; i < casillas.length; i++) {
