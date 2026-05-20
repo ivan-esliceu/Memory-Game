@@ -94,23 +94,11 @@ function mostrarquehaydebajocasillla(ultimosdosclicks, lista) {
 }
 mostrarquehaydebajocasillla(ultimosdosclicks, distribucionaleatoriaacoordenadas(lista_palabras));
 function Main() {
-    let ultimosdosclicks = [];
-    let parejas = todasparejas(parejasposibles(distribucionaleatoriaacoordenadas(lista_palabras))); 
     for (let i = 0; i < casillas.length; i++) {
         let casilla = document.getElementById(casillas[i]);     
         casilla.addEventListener("click", function() {
-            ultimosdosclicks.push(i+1);
-            if (ultimosdosclicks.length > 2) {
-                ultimosdosclicks.shift();
-                if (verificarpareja(ultimosdosclicks, parejas)) {
-                    alert("¡Pareja encontrada!");
-                } else {
-                    alert("No es una pareja.");
-                    for (let j = 0; j < ultimosdosclicks.length; j++) {
-                        let casilla = document.getElementById(casillas[ultimosdosclicks[j] - 1]);
-                        casilla.textContent = "a";
-                    }
-                }
+            if ultimosdoscl
+            
             }, 1000);
         });
     }      
