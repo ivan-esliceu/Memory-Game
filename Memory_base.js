@@ -93,15 +93,24 @@ function mostrarquehaydebajocasillla(ultimosdosclicks, lista) {
      }  
 }
 mostrarquehaydebajocasillla(ultimosdosclicks, distribucionaleatoriaacoordenadas(lista_palabras));
+
+function verificarpareja(){
+
+    for(let i = 0; i<8;i++){
+        console.log(i);
+    }
+    
+    console.log(parejas);
+}
+
+
 function Main() {
     for (let i = 0; i < casillas.length; i++) {
         let casilla = document.getElementById(casillas[i]);     
         casilla.addEventListener("click", function() {
-            if ultimosdoscl
             
-            }, 1000);
         });
     }      
 }
 
-Main();
+verificarpareja()
