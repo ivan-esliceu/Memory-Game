@@ -33,3 +33,9 @@ td {
   font-weight: bold;
   cursor: pointer;
 }
+
+/* NUEVA CLASE: Cambia el fondo a verde claro al acertar */
+.acertada {
+  background-color: #a3e635; 
+  cursor: default; /* Cambia el cursor para indicar que ya no se puede clicar */
+}
