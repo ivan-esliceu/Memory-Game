@@ -1,63 +1,35 @@
 body {
-  background-color: #121214;
-  color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
+  font-family: sans-serif;
+  margin: 40px;
 }
 
 h1 {
-  color: #6366f1;
+  color: black;
   margin-bottom: 5px;
-  font-size: 2.5rem;
 }
 
 p {
-  color: #a1a1aa;
-  margin-bottom: 20px;
+  color: gray;
 }
 
 #message {
-  font-size: 2rem;
+  font-size: 24px;
   font-weight: bold;
-  color: #10b981;
-  margin-bottom: 25px;
-  height: 40px;
-  text-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+  color: green;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 table {
-  border-collapse: separate;
-  border-spacing: 15px;
-  border: none;
+  border-collapse: collapse;
 }
 
 td {
-  background: #1f1f23;
-  border: 2px solid #3f3f46;
-  border-radius: 12px;
+  border: 2px solid black;
   width: 80px;
   height: 80px;
   text-align: center;
-  vertical-align: middle;
-  font-size: 1.2rem;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-}
-
-td:hover {
-  transform: translateY(-2px);
-  border-color: #6366f1;
-  background: #27272a;
-}
-
-td:active {
-  transform: translateY(0);
 }
