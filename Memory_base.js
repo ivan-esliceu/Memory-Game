@@ -1,6 +1,5 @@
 casillas = ["1","2","3","4","5","6","7","8"]
 
-//Función para aleatorizar el orden de las casillas
 
 
 //Función para clicks
@@ -14,6 +13,10 @@ casillas = ["1","2","3","4","5","6","7","8"]
 // }
 lista_palabras= ["perro","gato","casa","arbol"]
 
+
+
+
+// Funció per distribuir aleatoriament les coordenades de les paraules
 function distribucionaleatoriaacoordenadas(lista) {
     lista_duplicada = lista.concat(lista);
     lista_nueva= [];
@@ -28,6 +31,7 @@ function distribucionaleatoriaacoordenadas(lista) {
     return lista_nueva;
 }
 
+// Funció obsoleta ja que utilitzant un click listener no es pot fer externament
 function sacarcoordendadasultimosdosclicks(){
     ultimosdosclicks = ["hola"];
     for (let i = 0; i < casillas.length; i++) {
@@ -48,6 +52,7 @@ function sacarcoordendadasultimosdosclicks(){
 }
 
 sacarcoordendadasultimosdosclicks();
+//Funció per determinar parelles possibles
 function parejasposibles(lista){
     lista_parejas = [];
     for (let i = 0; i < lista.length; i++) {
@@ -60,7 +65,7 @@ function parejasposibles(lista){
     return lista_parejas;
 }
 
-
+//Funció per revertir una parella
 function revertirpareja(pareja){
     return [pareja[1], pareja[0]];
 }
@@ -69,7 +74,7 @@ function revertirpareja(pareja){
 
 
 
-
+//Funció per mostrar que hi ha davall una casella
 function mostrarquehaydebajocasillla(ultimosdosclicks, lista) {
     for (let i = 0; i < casillas.length; i++) {
         let casilla = document.getElementById(casillas[i]);
@@ -83,21 +88,11 @@ function mostrarquehaydebajocasillla(ultimosdosclicks, lista) {
 
 
 
-function verificarpareja(){
-
-    for(let i = 0; i<4;i++){
-        
-        if(sacarcoordendadasultimosdosclicks() == parejas[i] || sacarcoordendadasultimosdosclicks() == [parejas[i][1],parejas[i][0]]){
-            return true;
-        } else {
-            return false;
- 
-        }
-    }}
   
 
 
-// Funcion
+// Funcion per carregar el programa. Es important recalcar que es frustant ja que pots fer moltes proves individuals
+// amb funcions pero al final, el click listener s'ubica al Main i tot gira entorn aixó.
 function Main() {
     ultimosdosclicks = [];
     distribucion = distribucionaleatoriaacoordenadas(lista_palabras);
@@ -156,7 +151,7 @@ function Main() {
                 setTimeout(function() {
                     casilla1.textContent = "X";
                     casilla2.textContent = "X";
-                    }, 1500);
+                    }, 750);
                 }
     
             if (parejasDescubiertas.length === casillas.length) {
